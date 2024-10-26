@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Lateral Desplegable</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+    <!-- Botón para abrir el menú -->
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menú</button>
+
+    <!-- Menú lateral -->
+    <div id="menu" class="menu-lateral">
+        <div class="circle">
+            <a href="#"><Img src="IMAGENES/prueba.jpg" alt="Imagen 1"></a>
+        </div>
+        <div class="circle">
+            <a href="#"><Img src="IMAGENES/prueba.jpg" alt="Imagen 2"></a>
+        </div>        
+        <div class="circle">
+            <a href="#"><Img src="IMAGENES/prueba.jpg" alt="Imagen 3"></a>
+        </div>        
+        <div class="circle">
+            <a href="#"><Img src="IMAGENES/prueba.jpg" alt="Imagen 4"></a>
+        </div>        
+        <div class="circle">
+            <a href="#"><Img src="IMAGENES/prueba.jpg" alt="Imagen 5"></a>
+        </div>
+        <div class="circle">
+            <a href="#"><Img src="IMAGENES/prueba.jpg" alt="Imagen 6"></a>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar u ocultar el menú
+        function toggleMenu() {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("show");
+        }
+
+        // Cerrar el menú al hacer clic fuera de él
+        document.addEventListener("click", function(event) {
+            var menu = document.getElementById("menu");
+            var button = document.querySelector(".menu-btn");
+
+            // Verifica si el menú está abierto y si el clic fue fuera del menú y del botón
+            if (menu.classList.contains("show") && !menu.contains(event.target) && !button.contains(event.target)) {
+                menu.classList.remove("show");
+            }
+        });
+    </script>
+
+</body>
+</html>
